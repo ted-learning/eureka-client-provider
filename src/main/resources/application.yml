@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: eureka-client-provider
+server:
+  port: 7200
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+    restart:
+      enabled: true
+    pause:
+      enabled: true
+    resume:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka/"
+    healthcheck:
+      enabled: true
+  instance:
+    instance-id: c1
